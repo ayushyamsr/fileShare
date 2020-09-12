@@ -6,6 +6,7 @@ const cors=require('cors');
 const connectDB=require('./config/db.js');
 const files=require('./routes/files.js');
 const show=require('./routes/show.js');
+const mainPage=require('./routes/mainPage.js');
 const download=require('./routes/download.js');
 connectDB();
 
@@ -31,6 +32,6 @@ app.set('view engine','ejs');
 app.use(files);
 app.use(show);
 app.use(download);
-
+app.use(mainPage);
 
 app.listen(PORT,()=>console.log(`Server is up on port ${PORT}`));
